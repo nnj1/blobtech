@@ -15,6 +15,7 @@ class Character(Entity):
         }), is_player=False):
         super().__init__(name) 
         
+        self.description = ''
         self.max_hp = max_hp
         self.current_hp = max_hp
         self.base_attack = attack    # Base stat
