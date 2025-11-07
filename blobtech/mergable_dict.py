@@ -41,5 +41,20 @@ class MergeableDict:
         return MergeableDict(new_data)
 
     def __repr__(self) -> str:
+        return_str = f"MergeableDict("
         """Ensures clean printing of the object."""
-        return f"MergeableDict({self.data})"
+        if 'poison' in self.data:
+            return_str += '🤢 ' + str(self.data.get('poison')) + ', '
+        if 'burn' in self.data:
+            return_str += '🔥 ' + str(self.data.get('burn')) + ', '
+        if 'sleep' in self.data:
+            return_str += '💤 ' + str(self.data.get('sleep')) + ', '
+        if 'silence' in self.data:
+            return_str += '🤫 ' + str(self.data.get('silence')) + ', '
+        if 'blind' in self.data:
+            return_str += '👓 ' + str(self.data.get('blind')) + ', '
+        if 'petrify' in self.data:
+            return_str += '🪦 ' + str(self.data.get('petrify')) + ')'
+        else:
+            return_str = f"MergeableDict({self.data})"
+        return return_str
